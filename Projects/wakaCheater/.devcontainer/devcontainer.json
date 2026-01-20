@@ -10,7 +10,8 @@
       "extensions": [
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "Google.geminicodeassist"
+        "Google.geminicodeassist",
+        "WakaTime.vscode-wakatime"
       ]
     }
   },
