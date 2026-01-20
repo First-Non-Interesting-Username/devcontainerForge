@@ -11,7 +11,8 @@
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
         "Google.geminicodeassist",
-        "WakaTime.vscode-wakatime"
+        "WakaTime.vscode-wakatime",
+        "connor4312.esbuild-problem-matchers"
       ]
     }
   },
