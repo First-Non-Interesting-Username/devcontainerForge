@@ -1,31 +1,31 @@
 {
-    "name": "DevContainer Architect",
-    "build": {
-        "dockerfile": "Dockerfile"
+  "name": "DevContainer Architect",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "moby": true
     },
-    "features": {
-        "ghcr.io/devcontainers/features/docker-in-docker:2": {
-            "version": "latest",
-            "moby": true
-        },
-        "ghcr.io/devcontainers/features/node:1": {}
-    },
-    "customizations": {
-        "vscode": {
-            "settings": {
-                "editor.defaultFormatter": "esbenp.prettier-vscode",
-                "editor.formatOnSave": true
-            },
-            "extensions": [
-                "ms-vscode-remote.remote-containers",
-                "ms-azuretools.vscode-docker",
-                "redhat.vscode-yaml",
-                "esbenp.prettier-vscode",
-                "wakatime.vscode-wakatime",
-                "Google.geminicodeassist"
-            ]
-        }
-    },
-    "remoteUser": "vscode",
-    "postCreateCommand": "npm install -g prettier"
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+      },
+      "extensions": [
+        "ms-vscode-remote.remote-containers",
+        "ms-azuretools.vscode-docker",
+        "redhat.vscode-yaml",
+        "esbenp.prettier-vscode",
+        "wakatime.vscode-wakatime",
+        "Google.geminicodeassist"
+      ]
+    }
+  },
+  "remoteUser": "vscode",
+  "postCreateCommand": "npm install -g prettier"
 }

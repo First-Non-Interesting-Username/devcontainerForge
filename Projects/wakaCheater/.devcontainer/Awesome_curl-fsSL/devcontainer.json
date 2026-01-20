@@ -1,0 +1,17 @@
+{
+  "name": "Shell Scripting",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "timonwong.shellcheck",
+        "foxundermoon.shell-format",
+        "mads-hartmann.bash-ide-vscode",
+        "wakatime.vscode-wakatime",
+        "Google.geminicodeassist"
+      ]
+    }
+  },
+  // Install ShellCheck for static analysis
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y shellcheck"
+}
