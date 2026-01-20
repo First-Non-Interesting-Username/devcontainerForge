@@ -1,0 +1,39 @@
+{
+  "name": "BlueBuild Debian Workspace",
+  "image": "mcr.microsoft.com/devcontainers/base:debian-12",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "moby": true
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/common-utils:1": {
+      "installJust": true
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "redhat.vscode-yaml",
+        "ms-azuretools.vscode-docker",
+        "skellock.just",
+        "timonwong.shellcheck",
+        "esbenp.prettier-vscode",
+        "google.gemini-code-assist",
+        "WakaTime.vscode-wakatime"
+      ],
+      "settings": {
+        "yaml.schemas": {
+          "https://blue-build.org/schema.json": ["recipe.yml", "recipes/*.yml"]
+        },
+        "yaml.format.enable": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "[yaml]": {
+          "editor.defaultFormatter": "redhat.vscode-yaml"
+        },
+        "editor.formatOnSave": true
+      }
+    }
+  },
+  "onCreateCommand": "sudo apt-get update && sudo apt-get install -y curl ca-certificates && curl -fsSL https://raw.githubusercontent.com/blue-build/cli/main/install.sh | bash && curl -LO https://github.com/sigstore/cosign/releases/latest/download/cosign-linux-amd64 && sudo install -m 0755 cosign-linux-amd64 /usr/local/bin/cosign && rm cosign-linux-amd64",
+  "remoteUser": "vscode"
+}
