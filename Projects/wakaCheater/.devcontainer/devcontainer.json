@@ -15,5 +15,5 @@
       ]
     }
   },
-  "postCreateCommand": "npm install && npm install -g @vscode/vsce"
+  "postCreateCommand": "npm install -g yo generator-code @vscode/vsce && if [ -f package.json ]; then npm install; fi"
 }
