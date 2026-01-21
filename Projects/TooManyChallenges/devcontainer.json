@@ -1,0 +1,55 @@
+{
+  "name": "Balatro Mod Development",
+  "image": "mcr.microsoft.com/devcontainers/base:jammy",
+  "runArgs": [
+    "--device=/dev/dri:/dev/dri",
+    "-v",
+    "/run/user/1000:/run/user/1000",
+    "-v",
+    "/tmp/.X11-unix:/tmp/.X11-unix",
+    "--security-opt",
+    "label=disable",
+    "--ipc=host",
+    "--group-add",
+    "video",
+    "--group-add",
+    "audio"
+  ],
+  "containerEnv": {
+    "XDG_RUNTIME_DIR": "/run/user/1000",
+    "WAYLAND_DISPLAY": "${env:WAYLAND_DISPLAY}",
+    "DISPLAY": ":0",
+    "SDL_VIDEODRIVER": "wayland,x11",
+    "GDK_BACKEND": "wayland,x11",
+    "LOVE_GRAPHICS_USE_GL2": "1",
+    "GTK_USE_PORTAL": "0"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "sumneko.lua",
+        "Google.geminicodeassist",
+        "WakaTime.vscode-wakatime",
+        "johnnymorganz.stylua"
+      ],
+      "settings": {
+        "Lua.runtime.version": "LuaJIT",
+        "Lua.diagnostics.globals": [
+          "love",
+          "G",
+          "SMODS",
+          "sendDebugMessage",
+          "Joker",
+          "Card"
+        ],
+        "Lua.workspace.library": [
+          "${3rd}/love2d/library",
+          "/workspaces/${localWorkspaceFolderBasename}/Balatro_source"
+        ],
+        "Lua.workspace.checkThirdParty": false,
+        "editor.defaultFormatter": "johnnymorganz.stylua"
+      }
+    }
+  },
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y zip unzip lua5.1 libgl1-mesa-dri libgl1-mesa-glx libwayland-client0 libwayland-egl1 libpulse0 libasound2 libfuse2"
+}

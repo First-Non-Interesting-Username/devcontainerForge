@@ -1,5 +1,5 @@
 {
-  "name": "DevContainer Architect",
+  "name": "DevContainer Forge",
   "build": {
     "dockerfile": "Dockerfile"
   },

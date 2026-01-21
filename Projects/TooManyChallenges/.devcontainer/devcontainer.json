@@ -1,0 +1,22 @@
+{
+  "name": "Balatro Mod Development",
+  "image": "mcr.microsoft.com/devcontainers/base:jammy",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "sumneko.lua",
+        "Google.geminicodeassist",
+        "WakaTime.vscode-wakatime",
+        "johnnymorganz.stylua"
+      ],
+      "settings": {
+        "Lua.runtime.version": "LuaJIT",
+        "Lua.diagnostics.globals": ["love", "G", "sendDebugMessage"],
+        "Lua.workspace.library": ["${3rd}/love2d/library"],
+        "Lua.workspace.checkThirdParty": false,
+        "editor.defaultFormatter": "johnnymorganz.stylua"
+      }
+    }
+  },
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y zip unzip lua5.1"
+}
